@@ -1,0 +1,20 @@
+<h2>Lista de Produtos</h2>
+<table border="1">
+  <tr>
+    <th>ID</th><th>Descrição</th><th>Compra</th><th>Venda</th><th>Data</th><th>Ações</th>
+  </tr>
+  {% for p in regs %}
+  <tr>
+    <td>{{ p[0] }}</td>
+    <td>{{ p[1] }}</td>
+    <td>{{ p[2] }}</td>
+    <td>{{ p[3] }}</td>
+    <td>{{ p[4] }}</td>
+    <td>
+      <a href="/produtos/alterar/{{ p[0] }}">Alterar</a> |
+      <a href="/produtos/excluir/{{ p[0] }}">Excluir</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="/produtos/cadastrar">Cadastrar novo produto</a>
